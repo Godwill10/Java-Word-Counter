@@ -1,6 +1,4 @@
-import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,6 +7,10 @@ import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The controller class for the word counter application.
+ * @author Godwill Afolabi
+ */
 public class Controller implements ActionListener {
 
     /** The model of the WordCountModel. */
@@ -16,11 +18,21 @@ public class Controller implements ActionListener {
 
     /** The gui for the WordCountGUI. */
     private final WordCountGUI view;
-
+    
+    /**
+     * Creates a controller and sets it to be visible
+     */
     public Controller(){
         view = new WordCountGUI(this);
         view.setVisible( true);
     }
+    /**
+     * Performs the actions for the upload and submit buttons.
+     * Retrieves the path of the file selected
+     * then uses the path to read each line in the file,  
+     * count the occurrences of every word, and output a the result in a seperate text file.
+     * @param eo The event which occurred, identifying which button was pushed.
+     */
 
     @Override
     public void actionPerformed(ActionEvent eo) {
