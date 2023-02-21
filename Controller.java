@@ -1,5 +1,11 @@
 import java.awt.event.ActionEvent;
 import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Controller implements ActionListener {
 
@@ -27,7 +33,34 @@ public class Controller implements ActionListener {
                 System.out.println(file_path);
             }
         }
-
+        if(eo.getActionCommand().equals("Submit")){
+            try {
+                String inputFileName = "document.txt";
+                String outputFileName = "output.txt";
+                BufferedReader reader = new BufferedReader(new FileReader(inputFileName));
+                Map<String, Integer> wordCount = new HashMap<>();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] words = line.split("\\s+");
+                    for (String word : words) {
+                        word = word.toLowerCase();
+                        if (!wordCount.containsKey(word)) {
+                            wordCount.put(word, 1);
+                        } else {
+                            wordCount.put(word, wordCount.get(word) + 1);
+                        }
+                    }
+                }
+                reader.close();
+                BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName));
+                for (String word : wordCount.keySet()) {
+                    writer.write(word + ": " + wordCount.get(word) + "\n");
+                }
+                writer.close();
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
 
     }
 }
