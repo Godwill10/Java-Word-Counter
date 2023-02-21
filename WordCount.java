@@ -4,7 +4,7 @@
  */
 
  /**
- * Driver class for the Temperature application.
+ * Driver class for the Word Count application.
  * @author Godwill Afolabi
  */
 
