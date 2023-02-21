@@ -1,4 +1,6 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,7 +20,7 @@ public class Controller implements ActionListener {
 
     /** The gui for the WordCountGUI. */
     private final WordCountGUI view;
-    
+
     /**
      * Creates a controller and sets it to be visible
      */
