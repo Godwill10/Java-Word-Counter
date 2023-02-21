@@ -1,5 +1,5 @@
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.*;
 
 public class Controller implements ActionListener {
 
@@ -15,7 +15,20 @@ public class Controller implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent eo) {
+
+        if(eo.getActionCommand().equals("Upload")){
+            JFileChooser file_upload = new JFileChooser();
+            file_upload.setCurrentDirectory(new File("."));
+
+            int response = file_upload.showSaveDialog(null);
+            if(response == JFileChooser.APPROVE_OPTION){
+                File file_path = new File(file_upload.getSelectedFile().getAbsolutePath());
+                System.out.println(file_path);
+            }
+        }
+
 
     }
 }
+
