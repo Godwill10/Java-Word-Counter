@@ -5,24 +5,22 @@ The purpose of this program is to build a GUI application that can open up a tex
 
 **********Organization**********
 
-The application has 4 classes:
-    WordCount.java - Contains the main to create the WordCount application. It is the driver class for the Word Count application.
-                    It simply contains one line of code that creates a WordCountGUI object and makes it visible.
+    WordCount.java - It is the main driver for the word count application. It taks a document, reads every line, and count the number of words in the document and count the all the occurrences of each word. 
+        It has three methods/functions: 
+            main: Runs the word count program using BufferedReader, Map, and helping methods.
 
-    WordCountGUI - The Word Counter application graphical user interface. It sets the components and their positions in the gui. 
-                    It also sets the Controller as the buttons' action listener.
+            removePunctuations: Removes punctuation from a given string.
 
-    WordCountModel - 
+            removeHyphens: Removes hyphens from a given string.
 
-    Controller.java - The controller does most of the work. It retrieves the path of the file selected by the user and uses the path to read each line in the file, count the occurrences of every word, and output a the result in a seperate text file.
+            getWordCount: Gets the total word count from an output file that contains words and their counts.
 
 
 **********How to use/run**********
 
-When 'WordCount.java' is ran. The GUI pops up with a select files option and a submit button. The user can then select a text file
-that the program will then read and count the occurrences of every word in the file. The result of this execution will be printed out 
-to a file named "output.txt".
+When 'WordCount.java' is ran. It takes the document that is specified in the code (sitting in the directory) and performs the word count operation on it. The total word ocunt is then printed to the terminal and a new output file is created to listen the number of times each word occurred.
 
 
 **********Design Notes**********
 
+The project uses different Java imports/libraries to execute the word count including: BufferedReader, BufferedWriter, FileReader, FileWriter, HashMap, and Map.
