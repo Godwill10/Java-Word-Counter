@@ -1,7 +1,6 @@
-package src;
 /*
- * src.WordCount.java
- * Contains the main to create the src.WordCount application.
+ * WordCount.java
+ * Contains the main to create the WordCount application.
  */
 
 import java.io.BufferedReader;
