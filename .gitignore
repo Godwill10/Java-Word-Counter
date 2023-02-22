@@ -1,0 +1,4 @@
+# ignores the out folder
+out/
+# ignores all .iml files
+.iml
