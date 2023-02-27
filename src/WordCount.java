@@ -73,7 +73,7 @@ public class WordCount {
      * @param s the string to remove punctuation from
      * @return the cleaned string without any punctuation
      */
-    private static String removePunctuations(String s) {
+    protected static String removePunctuations(String s) {
         String punctuation_removed = s.replaceAll("[^a-zA-Z0-9\\s]", "");
         return punctuation_removed;
     }
@@ -84,7 +84,7 @@ public class WordCount {
      * @param s the string to remove hyphens from
      * @return the cleaned string with hyphens replaced by spaces
      */
-    private static String removeHyphens(String s) {
+    protected static String removeHyphens(String s) {
         String hyphens_removed = s.replaceAll("-", " "); // Replace all hyphens with spaces
         return hyphens_removed;
     }
