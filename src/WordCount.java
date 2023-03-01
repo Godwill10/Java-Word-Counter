@@ -85,7 +85,7 @@ public class WordCount {
      * @return the cleaned string with hyphens replaced by spaces
      */
     protected static String removeHyphens(String s) {
-        String hyphens_removed = s.replaceAll("-", " "); // Replace all hyphens with spaces
+        String hyphens_removed = s.replaceAll("-", ""); // Replace all hyphens with spaces
         return hyphens_removed;
     }
 
@@ -96,7 +96,7 @@ public class WordCount {
      * @return the total number of words in the output file
      * @throws Exception if an error occurs while reading the output file
      */
-    private static int getWordCount(String outputFileName) throws Exception {
+    protected static int getWordCount(String outputFileName) throws Exception {
         int totalCount = 0;
         BufferedReader reader = new BufferedReader(new FileReader(outputFileName));
         String line;
