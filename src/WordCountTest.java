@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.*;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  */
 public class WordCountTest {
-    private WordCount wordCounter;
+    private Controller controller;
 
     /**
      * Empty test class constructor
@@ -26,7 +24,7 @@ public class WordCountTest {
     @BeforeEach
     public void setup() {
         System.out.println("Creating a new word counter!");
-        wordCounter = new WordCount();
+        controller = new Controller();
     }
 
     /**
@@ -67,7 +65,7 @@ public class WordCountTest {
         System.out.println();
         String input = "Hello, world!";
         String expectedOutput = "Hello world";
-        String actualOutput = wordCounter.removePunctuations(input);
+        String actualOutput = controller.removePunctuations(input);
         assertEquals(expectedOutput, actualOutput);
     }
 
@@ -81,7 +79,7 @@ public class WordCountTest {
         System.out.println();
         String input = "co-operate";
         String expectedOutput = "cooperate";
-        String actualOutput = wordCounter.removeHyphens(input);
+        String actualOutput = controller.removeHyphens(input);
         assertEquals(expectedOutput, actualOutput);
     }
 
