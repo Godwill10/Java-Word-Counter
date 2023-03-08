@@ -21,7 +21,7 @@ public class WordCountGUI extends JFrame {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
 
-        panel.setBorder(BorderFactory.createEmptyBorder(150, 150, 150, 150));
+        panel.setBorder(BorderFactory.createEmptyBorder(250, 250, 250, 250));
         panel.setLayout(new GridLayout(0, 1));
         panel.add(selectLabel);
         panel.add(uploadLabel);
