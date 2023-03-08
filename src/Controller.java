@@ -1,10 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -128,18 +130,20 @@ public class Controller implements ActionListener {
      * @return the total number of words in the output file
      * @throws Exception if an error occurs while reading the output file
      */
-    protected static int getWordCount(String outputFileName) throws Exception {
-        int totalCount = 0;
-        BufferedReader reader = new BufferedReader(new FileReader(outputFileName));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] wordCount = line.split("\\s*:\\s*");
-            if (wordCount.length == 2) {
-                totalCount += Integer.parseInt(wordCount[1]);
+    protected static int getWordCount (String outputFileName)throws FileNotFoundException{
+        File file0 = new File(outputFileName);
+        int wordCount = 0;
+        try{ Scanner scan = new Scanner(new FileInputStream(file0));
+            while(scan.hasNext()){
+                scan.next();
+                wordCount++;
             }
         }
-        reader.close();
-        return totalCount;
+        catch(Exception e){
+            System.out.println("file not found!");
+        }
+        return wordCount;
+
     }
 }
 
